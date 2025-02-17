@@ -5,7 +5,7 @@ database is hosted on PlanetScale MySQL instance.
 
 In your .ENV file please paste the following line to set up a live connection to the DB
 
-DATABASE_URL="mysql://xwjf2jyfjlcszw2pt8ir:pscale_pw_iy8DL7rArW0pNcBXIEnVxoD1JZg5Vfw06lIPwrYfZyd@aws.connect.psdb.cloud/meow-sample?sslaccept=strict"**
+DATABASE_URL='mysql://pbzk01wh8oepkr7agd2p:pscale_pw_f7y2hNmdwfxe7FSGFSb2L4po5S4X2TfHTKCflqCashb@aws.connect.psdb.cloud/meow-sample?sslaccept=strict'**
 
 Note: This database will be deactivated within next few days.
 
