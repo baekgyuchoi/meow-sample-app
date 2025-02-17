@@ -1,8 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+**SET UP DATABASE CONNECTION:
+database is hosted on PlanetScale MySQL instance.
+
+In your .ENV file please paste the following line to set up a live connection to the DB
+
+DATABASE_URL="mysql://xwjf2jyfjlcszw2pt8ir:pscale_pw_iy8DL7rArW0pNcBXIEnVxoD1JZg5Vfw06lIPwrYfZyd@aws.connect.psdb.cloud/meow-sample?sslaccept=strict"**
+
+Note: This database will be deactivated within next few days.
+
 ## Getting Started
 
-First, run the development server:
+
+
+Run the development server:
 
 ```bash
 npm run dev
