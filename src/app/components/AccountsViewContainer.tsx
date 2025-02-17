@@ -39,11 +39,13 @@ const AccountsViewContainer: React.FC<AccountsViewContainerProps> = ({accountId}
 
     return(
         <div className="flex flex-col border-2 px-4 py-3">
-            {accounts.map((account, index) => {
+            {(accounts) ? (accounts.map((account, index) => {
                 return(
                     <AccountCard key={index} balance={account.balance} id={account.id} email={account.email} createdAt={account.createdAt}/>
                 )
-            })}
+            })) : (<></>)
+            
+            }
 
         </div>
     )

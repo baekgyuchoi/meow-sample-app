@@ -1,22 +1,16 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
 model Accounts {
   id                    Int            @id @default(autoincrement())
-  email                 String        
+  email                 String         @unique
   balance               Int            @default(0)
   createdAt             DateTime       @default(now())
   transactions_sent     Transactions[] @relation("sentTransactions")
@@ -24,13 +18,11 @@ model Accounts {
 }
 
 model Transactions {
-  id                    Int @id @default(autoincrement())
-  senderId              Int       
-  receiverId            Int
-  createdAt             DateTime       @default(now())
-  amount                Int        
-  
-
-  sender   Accounts @relation("sentTransactions", fields: [senderId], references: [id])
-  receiver Accounts @relation("receivedTransactions", fields: [receiverId], references: [id])
+  id         Int      @id @default(autoincrement())
+  senderId   Int
+  receiverId Int
+  amount     Int
+  createdAt  DateTime @default(now())
+  sender     Accounts @relation("sentTransactions", fields: [senderId], references: [id])
+  receiver   Accounts @relation("receivedTransactions", fields: [receiverId], references: [id])
 }

@@ -60,6 +60,7 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ data: accounts }, { status: 200 })
     }
     catch(e){
+        console.error(e)
         return NextResponse.json({ error: e }, { status: 500 })
     }
 

@@ -32,9 +32,7 @@ const TransactionListContainer : React.FC<TransactionListContainerProps> = ({tra
 
     return(
         <div className='flex flex-col p-5 gap-2'>
-            <div>
-                HIHIHIHIHIHIHI TransactionListContainer
-            </div>
+          
             {transactions?.map((transaction, index)=> {
                 return(
                     <TransactionCard key={index} id={transaction.id} senderId={transaction.senderId} receiverId={transaction.receiverId} amount={transaction.amount} createdAt={transaction.createdAt}/>
